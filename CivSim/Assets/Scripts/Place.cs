@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class Place : MonoBehaviour
 {
-	protected HashSet<WorkChain> workChains;
+	protected HashSet<WorkChain> workChains = new();
 
 	/// <summary>
 	/// 

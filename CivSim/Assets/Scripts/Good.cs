@@ -8,6 +8,9 @@ public class Good
 	{
 		None,
 		Food,
+		BuildingMaterial1,
+		BuildingMaterial2,
+		BuildingMaterial3,
 	}
     
 	public readonly Type type;
