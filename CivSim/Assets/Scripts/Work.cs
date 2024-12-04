@@ -6,7 +6,7 @@ public class Work
 {
 	public string name;
 	public float time;
-	public HashSet<WorkChain> memberOf;
+	public HashSet<WorkChain> parentChain;
 
 	public Dictionary<Good.Type, int> neededGoods;
 }

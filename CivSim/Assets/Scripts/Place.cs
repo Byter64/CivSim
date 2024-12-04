@@ -5,20 +5,18 @@ using UnityEngine;
 
 public abstract class Place : MonoBehaviour
 {
-	private HashSet<WorkChain> workChains;
+	protected HashSet<WorkChain> workChains;
 
 	/// <summary>
 	/// 
 	/// </summary>
-	/// <returns>Returns a list of all currently doable works, which is sorted by totalTimeLeft in ascending order</returns>
-	public List<Work> GetDoableWorks()
+	/// <returns>Returns a list of all currently doable works, which is sorted by their time in ascending order</returns>
+	public List<WorkInfo> GetDoableWorks()
 	{
-
+		List<WorkInfo> works = new();
 		foreach(WorkChain chain in workChains)
-			chain.UpdateLeftTime();
+			works.Add(new WorkInfo(chain));
 
-		IOrderedEnumerable<Work> result = workChains.Select(chain => { return chain.chain[chain.nextWork]; })
-			.OrderBy(a => a.totalTimeLeft);
-		return result.ToList();
+		return works.OrderBy(a => a.time).ToList();
 	}
 }
