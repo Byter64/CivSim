@@ -7,10 +7,10 @@ public class WorkChain
 	public List<Work> chain;
 	public int nextWork;
 	public float leftTime;
-	public Dictionary<Good.Type, int> GetResultingGoods()
-	{
-		return chain[chain.Count - 1].resultingGoods;
-	}
+
+	//Goods that are created on completion of the work chain
+	public Dictionary<Good.Type, int> resultingGoods;
+
 
 	public void UpdateLeftTime()
 	{
