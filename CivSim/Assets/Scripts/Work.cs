@@ -12,5 +12,7 @@ public class Work
 
 	//Goods that can be gained, by doing other works in a work chain
 	public HashSet<WorkChain> memberOf;
+	
 	public float time;
+	public float totalTimeLeft;
 }
